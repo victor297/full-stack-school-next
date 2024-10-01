@@ -9,7 +9,6 @@ import { useEffect } from "react";
 
 const LoginPage = () => {
   const { isLoaded, isSignedIn, user } = useUser();
-  console.log("userdata", user)
 
   const router = useRouter();
 
@@ -17,6 +16,8 @@ const LoginPage = () => {
     const role = user?.publicMetadata.role;
 
     if (role) {
+        console.log("userdata", user)
+
       router.push(`/${role}`);
     }
   }, [user, router]);
